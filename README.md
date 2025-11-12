@@ -1,0 +1,2 @@
+# global_solution_microservice
+micro_service
