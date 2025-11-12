@@ -35,14 +35,14 @@ namespace MyApp.Infra
         public async Task CreateAsync(Prompt prompt)
         {
             using var conn = _dbFactory.CreateConnection();
-            var sql = "INSERT INTO Prompts (Id, Title, Content, CreatedAt, UpdatedAt) VALUES (@Id, @Title, @Content, @CreatedAt, @UpdatedAt)";
+            var sql = "INSERT INTO Prompts (Id, titulo, conteudo, CreatedAt, UpdatedAt) VALUES (@Id, @Title, @Content, @CreatedAt, @UpdatedAt)";
             await conn.ExecuteAsync(sql, prompt);
         }
 
         public async Task UpdateAsync(Prompt prompt)
         {
             using var conn = _dbFactory.CreateConnection();
-            var sql = @"UPDATE Prompts SET Title = @Title, Content = @Content, UpdatedAt = @UpdatedAt WHERE Id = @Id";
+            var sql = @"UPDATE Prompts SET titulo = @Titulo, Conteudo = @Conteudo, UpdatedAt = @UpdatedAt WHERE Id = @Id";
             await conn.ExecuteAsync(sql, prompt);
         }
 
