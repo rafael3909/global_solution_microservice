@@ -28,7 +28,7 @@ namespace MyApp.Infra
         public async Task<Prompt?> GetByIdAsync(Guid id)
         {
             using var conn = _dbFactory.CreateConnection();
-            var sql = "SELECT Id, Title, Content, CreatedAt, UpdatedAt FROM Prompts WHERE Id = @Id";
+            var sql = "SELECT Id, Titulo, Conteudo, CreatedAt, UpdatedAt FROM Prompts WHERE Id = @Id";
             return await conn.QueryFirstOrDefaultAsync<Prompt>(sql, new { Id = id });
         }
 
